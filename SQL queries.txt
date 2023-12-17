@@ -1,0 +1,8 @@
+//Creating the table to contain our data
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  bookcover_olid VARCHAR(20),
+  rating FLOAT,
+  review TEXT,
+  book_name TEXT
+);
