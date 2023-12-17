@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read books webpage</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Top recommended books</h1>
+    <a href="/new"><button>Add new book</button></a>
+    <% if(locals.data){ %>
+        <% data.forEach((element)=>{ %>
+            <h2><%= element.book_name %></h2>
+            <% let url = "https://covers.openlibrary.org/b/olid/"+ element.bookcover_olid +"-M.jpg"; %>
+            <img src=<%= url %> alt="Book cover" />
+            <p>Rating: <%= element.rating %></p>
+            <p><%= element.review %></p>
+            <a href="/update/<%= element.id %>"><button>Update</button></a>
+            <form action="/delete/<%= element.id %>" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        <% }); %>
+    <% } %>
+</body>
+</html>

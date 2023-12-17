@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/new" method="post">
+        <label>Book name</label>
+        <input type="text" name="bookName"/> <br/>
+
+        <label>Rating</label>
+        <input type="number" step="0.1" min="0" max="10" name="rating"/> <br/>
+
+        <label>Review</label>
+        <input type="text" name="review"/> <br/>
+
+        <label>Book-cover OLID (<a href="https://openlibrary.org/dev/docs/api/covers">Get it from here</a>)</label> 
+        <input type="text" name="olid"/> <br/>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/"><button>Cancel</button></a>
+</body>
+</html>
